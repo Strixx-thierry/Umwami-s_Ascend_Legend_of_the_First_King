@@ -124,3 +124,6 @@ desktop.ini
 
 # Design documents (GDD, diagrams) are kept out of the repo
 /documents/
+
+# Art source (Blender files, build scripts, third-party kits) is kept out of the repo
+/ArtSource/
