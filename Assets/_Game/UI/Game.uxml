@@ -1,0 +1,73 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements">
+  <Style src="Umwami.uss" />
+  <ui:VisualElement name="root" style="flex-grow: 1;" picking-mode="Ignore">
+
+    <!-- HUD -->
+    <ui:VisualElement name="hud" class="fill" picking-mode="Ignore">
+      <ui:VisualElement class="shade-top" style="position: absolute; left: 0; right: 0; top: 0; height: 220px;" picking-mode="Ignore" />
+      <ui:VisualElement class="shade-bottom" style="position: absolute; left: 0; right: 0; bottom: 0; height: 200px;" picking-mode="Ignore" />
+      <ui:VisualElement style="position: absolute; left: 48px; top: 44px;" picking-mode="Ignore">
+        <ui:VisualElement name="cores" class="cores" />
+        <ui:VisualElement class="bar" style="width: 230px; margin-top: 14px;"><ui:VisualElement name="light-fill" class="bar-fill" style="width: 50%;" /></ui:VisualElement>
+      </ui:VisualElement>
+      <ui:VisualElement style="position: absolute; right: 48px; top: 44px; width: 380px; align-items: flex-end;" picking-mode="Ignore">
+        <ui:Label name="obj-quest" text="THE ONE WHO FELL" class="eyebrow" style="font-size: 11px;" />
+        <ui:Label name="obj-text" text="Find a way out of the marsh" class="f-serif parch" style="font-size: 20px; margin-top: 8px; -unity-text-align: upper-right; white-space: normal;" />
+        <ui:VisualElement class="hair" style="width: 380px; margin-top: 12px; margin-bottom: 10px;" />
+        <ui:Label name="obj-sub" text="" class="body f-light" style="font-size: 14px; -unity-text-align: upper-right;" />
+      </ui:VisualElement>
+      <!-- compass: one hairline, cardinals and markers slide with the camera -->
+      <ui:VisualElement name="compass" class="compass" picking-mode="Ignore">
+        <ui:VisualElement class="hair compass-line" picking-mode="Ignore" />
+        <ui:VisualElement class="compass-center" picking-mode="Ignore" />
+      </ui:VisualElement>
+      <ui:VisualElement name="notices" class="toast" picking-mode="Ignore" />
+      <ui:VisualElement name="interact" style="position: absolute; left: 0; right: 0; top: 600px; align-items: center;" picking-mode="Ignore">
+        <ui:VisualElement style="flex-direction: row; align-items: center; background-color: rgba(9,11,10,0.55); padding: 6px 14px 6px 8px;">
+          <ui:Label class="glyph" text="E" /><ui:Label name="interact-text" class="parch" style="font-size: 15px;" text="Talk" />
+        </ui:VisualElement>
+      </ui:VisualElement>
+      <ui:Label name="subtitle" class="parch" style="position: absolute; left: 300px; right: 300px; bottom: 106px; font-size: 21px; -unity-text-align: middle-center; white-space: normal; text-shadow: 0 2px 8px rgba(0,0,0,0.9);" text="" picking-mode="Ignore" />
+    </ui:VisualElement>
+
+    <!-- Choice -->
+    <ui:VisualElement name="choice" class="fill hidden" style="background-color: rgba(9,11,10,0.35);">
+      <ui:VisualElement class="fill shade-bottom" />
+      <ui:VisualElement class="letterbox" style="top: 0;" />
+      <ui:VisualElement class="letterbox" style="bottom: 0;" />
+      <ui:VisualElement style="position: absolute; left: 120px; bottom: 160px; width: 700px;">
+        <ui:Label name="choice-speaker" text="THE BOY" class="eyebrow" />
+        <ui:Label name="choice-line" class="f-serif parch" style="font-size: 30px; margin-top: 12px; white-space: normal; text-shadow: 0 2px 12px rgba(0,0,0,0.9);" text="" />
+      </ui:VisualElement>
+      <ui:VisualElement style="position: absolute; right: 120px; bottom: 160px; width: 500px;">
+        <ui:VisualElement name="choice-list" />
+        <ui:Label class="body f-light" style="font-size: 14px; margin-top: 18px;" text="Choices shape how people see Rudh." />
+      </ui:VisualElement>
+    </ui:VisualElement>
+
+    <!-- Pause -->
+    <ui:VisualElement name="pause" class="fill hidden" style="background-color: rgba(9,11,10,0.78);">
+      <ui:VisualElement style="position: absolute; left: 110px; top: 130px; width: 420px;">
+        <ui:Label text="PAUSED" class="eyebrow" />
+        <ui:VisualElement class="hair" style="width: 220px; margin-top: 16px; margin-bottom: 22px;" />
+        <ui:VisualElement name="pause-list" />
+        <ui:Label class="body f-light" style="font-size: 13px; margin-top: 18px;" text="The game saves at every hearth and on every scene change." />
+      </ui:VisualElement>
+    </ui:VisualElement>
+
+    <!-- End of scene (Tellings preview) -->
+    <ui:VisualElement name="end" class="fill hidden" style="background-color: rgba(9,11,10,0.9); align-items: center; justify-content: center;">
+      <ui:VisualElement style="width: 760px; align-items: center;">
+        <ui:Label text="CHAPTER I · TO BE CONTINUED" class="eyebrow" />
+        <ui:Label name="end-title" text="The One Who Fell" class="f-display title" style="font-size: 54px; margin-top: 10px;" />
+        <ui:VisualElement class="ornament" style="width: 320px; margin-top: 14px; margin-bottom: 26px;" />
+        <ui:Label text="Your telling" class="eyebrow dim-text" style="font-size: 11px; margin-bottom: 12px;" />
+        <ui:VisualElement name="end-choices" style="align-items: center;" />
+        <ui:Label class="body f-light" style="margin-top: 24px; -unity-text-align: middle-center;" text="Other tellers walked other paths. The full Tellings flowchart arrives with the rest of the chapter." />
+        <ui:VisualElement name="end-list" style="margin-top: 30px; width: 360px;" />
+      </ui:VisualElement>
+    </ui:VisualElement>
+
+    <ui:VisualElement class="fill grain" picking-mode="Ignore" />
+  </ui:VisualElement>
+</ui:UXML>

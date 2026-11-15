@@ -1,0 +1,110 @@
+/* Umwami's Ascend UI · v0.2 design (documents/ui/umwami-ui-design.pdf). Reference canvas 1600x900.
+   Colours: night #0F1211, parchment #F2E6CC, gold #D4B06A, ember #F0A53A, ochre #AF5B3C. Fonts are set from code (UIFonts). */
+
+.root { flex-grow: 1; background-color: rgb(9, 11, 10); }
+.screen { position: absolute; left: 0; top: 0; right: 0; bottom: 0; opacity: 1; transition-property: opacity; transition-duration: 0.3s; }
+.hidden { display: none; }
+.fade-out { opacity: 0; }
+.fill { position: absolute; left: 0; top: 0; right: 0; bottom: 0; }
+.bg { -unity-background-scale-mode: scale-and-crop; }
+
+/* backgrounds (graded Blender renders) */
+.bg-title { background-image: url("Art/bg_title.png"); }
+.bg-menu { background-image: url("Art/bg_village-vista.png"); }
+.bg-valley { background-image: url("Art/bg_marsh-valley.png"); }
+.bg-arena { background-image: url("Art/bg_marsh-arena.png"); }
+.bg-player { background-image: url("Art/bg_marsh-player.png"); }
+.bg-village { background-image: url("Art/bg_village.png"); }
+.shade-right { background-image: url("Textures/shade_right.png"); -unity-background-scale-mode: stretch-to-fill; }
+.shade-left { background-image: url("Textures/shade_left.png"); -unity-background-scale-mode: stretch-to-fill; }
+.shade-bottom { background-image: url("Textures/shade_bottom.png"); -unity-background-scale-mode: stretch-to-fill; }
+.shade-top { background-image: url("Textures/shade_top.png"); -unity-background-scale-mode: stretch-to-fill; }
+.vignette { background-image: url("Textures/vignette.png"); -unity-background-scale-mode: stretch-to-fill; }
+.dark { background-color: rgba(9, 11, 10, 0.82); }
+.grain { background-image: url("Textures/grain.png"); background-repeat: repeat repeat; background-size: 256px 256px; }
+
+/* type */
+.eyebrow { font-size: 13px; letter-spacing: 4px; color: rgb(212, 176, 106); -unity-font-style: normal; }
+.title { color: rgb(231, 205, 150); text-shadow: 0 3px 14px rgba(0, 0, 0, 0.7); }
+.body { font-size: 17px; color: rgb(185, 174, 149); white-space: normal; }
+.parch { color: rgb(242, 230, 204); }
+.dim-text { color: rgb(185, 174, 149); }
+.faint { color: rgb(125, 117, 99); }
+.gold { color: rgb(212, 176, 106); }
+.ochre { color: rgb(175, 91, 60); }
+
+/* ornaments */
+.hair { height: 1px; background-image: url("Textures/hair_gold.png"); -unity-background-scale-mode: stretch-to-fill; }
+.ornament { height: 24px; background-image: url("Textures/ornament.png"); -unity-background-scale-mode: scale-to-fit; }
+.logo { background-image: url("Textures/logo.png"); -unity-background-scale-mode: scale-to-fit; }
+.gem { width: 14px; height: 14px; background-image: url("Textures/gem.png"); -unity-background-scale-mode: stretch-to-fill; }
+
+/* menu items: text first; focus = gold band + gem */
+.mi { height: 50px; flex-direction: row; align-items: center; padding-left: 28px; padding-right: 28px; }
+.mi > .gem { position: absolute; left: 0; top: 18px; opacity: 0; }
+.mi > Label { font-size: 25px; color: rgb(185, 174, 149); letter-spacing: 1px; }
+.mi.sel { background-image: url("Textures/sel_band.png"); -unity-background-scale-mode: stretch-to-fill; }
+.mi.sel > .gem { opacity: 1; }
+.mi.sel > Label { color: rgb(242, 230, 204); }
+.mi.right { justify-content: flex-end; }
+.mi.right > .gem { left: auto; right: 0; }
+.mi.disabled > Label { color: rgb(125, 117, 99); }
+
+/* panels: double hairline frame */
+.panel { background-color: rgba(14, 16, 15, 0.82); border-width: 1px; border-color: rgba(212, 176, 106, 0.35); }
+.panel-inner { position: absolute; left: 5px; top: 5px; right: 5px; bottom: 5px; border-width: 1px; border-color: rgba(212, 176, 106, 0.16); }
+.panel.hot { border-color: rgb(212, 176, 106); }
+.corner { position: absolute; width: 22px; height: 22px; background-image: url("Textures/corner.png"); -unity-background-scale-mode: stretch-to-fill; }
+
+/* prompts */
+.prompts { flex-direction: row; }
+.prompt { flex-direction: row; align-items: center; margin-left: 26px; }
+.glyph { min-width: 26px; height: 26px; border-width: 1px; border-color: rgb(185, 174, 149); border-radius: 5px; -unity-text-align: middle-center; font-size: 12px; color: rgb(242, 230, 204); padding-left: 6px; padding-right: 6px; margin-right: 8px; }
+.glyph.round { border-radius: 13px; padding-left: 0; padding-right: 0; width: 26px; }
+.prompt-label { font-size: 14px; color: rgb(185, 174, 149); }
+
+/* cores + light */
+.cores { flex-direction: row; }
+.core { width: 22px; height: 22px; margin-right: 6px; background-image: url("Textures/core.png"); -unity-background-scale-mode: stretch-to-fill; }
+.core.empty { background-image: url("Textures/core_empty.png"); }
+.core.lost { background-image: url("Textures/core_lost.png"); }
+.bar { height: 5px; background-color: rgba(0, 0, 0, 0.55); border-width: 1px; border-color: rgba(212, 176, 106, 0.35); }
+.bar-fill { height: 100%; background-color: rgb(240, 165, 58); }
+
+/* toast / notices */
+.toast { position: absolute; left: 48px; top: 300px; }
+.notice { padding: 8px 60px 8px 14px; margin-bottom: 8px; background-color: rgba(9, 11, 10, 0.6); border-left-width: 1px; border-color: rgb(212, 176, 106); font-size: 15px; color: rgb(242, 230, 204); transition-property: opacity; transition-duration: 0.4s; }
+.notice.ochre-edge { border-color: rgb(175, 91, 60); }
+
+/* save slots */
+.slot { width: 330px; height: 470px; margin-right: 26px; }
+.slot-img { height: 180px; -unity-background-scale-mode: scale-and-crop; border-bottom-width: 1px; border-color: rgba(212, 176, 106, 0.35); }
+.slot-body { padding: 18px 22px; }
+
+/* choice */
+.letterbox { position: absolute; left: 0; right: 0; height: 84px; background-color: rgb(0, 0, 0); }
+.choice-opt { height: auto; padding-top: 16px; padding-bottom: 16px; margin-bottom: 14px; justify-content: center; }
+.choice-opt > .gem { top: 26px; }
+.choice-opt > .opt-text { font-size: 23px; color: rgb(185, 174, 149); }
+.choice-opt > .opt-tag { margin-top: 6px; }
+.choice-opt.sel > .opt-text { color: rgb(242, 230, 204); }
+.choice-opt > .opt-tag { font-size: 10px; letter-spacing: 3px; color: rgb(125, 117, 99); }
+.choice-opt.sel > .opt-tag { color: rgb(212, 176, 106); }
+
+/* HUD text stays readable on bright skies */
+#hud Label { text-shadow: 0 1px 6px rgba(0, 0, 0, 0.9); }
+#hud .dim-text, #hud .body { color: rgb(222, 212, 188); }
+
+/* compass (top centre) */
+.compass { position: absolute; left: 500px; right: 500px; top: 40px; height: 64px; overflow: hidden; }
+.compass-line { position: absolute; left: 0; right: 0; top: 30px; }
+.compass-center { position: absolute; left: 50%; top: 33px; width: 1px; height: 7px; margin-left: -0.5px; background-color: rgb(212, 176, 106); }
+.cmp-item { position: absolute; top: 0; width: 60px; margin-left: -30px; align-items: center; }
+.cmp-letter { font-size: 14px; color: rgb(185, 174, 149); -unity-text-align: middle-center; height: 26px; }
+.cmp-letter.north { color: rgb(242, 230, 204); -unity-font-style: bold; }
+.cmp-tick { width: 1px; height: 5px; margin-top: 24px; background-color: rgba(242, 230, 204, 0.4); }
+.cmp-marker { width: 15px; height: 15px; margin-top: 6px; background-image: url("Textures/core_empty.png"); -unity-background-scale-mode: stretch-to-fill; }
+.cmp-marker.main { background-image: url("Textures/gem.png"); width: 17px; height: 17px; }
+.cmp-dist { font-size: 12px; letter-spacing: 2px; color: rgb(242, 230, 204); margin-top: 12px; -unity-text-align: middle-center; }
+
+.spin { width: 30px; height: 30px; background-image: url("Textures/gem.png"); -unity-background-scale-mode: stretch-to-fill; }

@@ -1,0 +1,102 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements">
+  <Style src="Umwami.uss" />
+  <ui:VisualElement name="root" class="root">
+
+    <!-- 1 · Boot: studio logo -->
+    <ui:VisualElement name="scr-boot" class="screen" style="background-color: rgb(0,0,0); align-items: center; justify-content: center;">
+      <ui:VisualElement class="gem" style="width: 22px; height: 22px;" />
+      <ui:Label text="[STUDIO NAME]" class="f-display title" style="font-size: 30px; letter-spacing: 9px; margin-top: 28px;" />
+      <ui:Label text="PRESENTS" class="eyebrow faint" style="margin-top: 12px;" />
+    </ui:VisualElement>
+
+    <!-- 2 · Notice -->
+    <ui:VisualElement name="scr-notice" class="screen hidden" style="background-color: rgb(0,0,0); align-items: center; justify-content: center;">
+      <ui:VisualElement style="width: 620px;">
+        <ui:VisualElement class="ornament" style="width: 220px; margin-bottom: 26px;" />
+        <ui:Label class="f-serif parch" style="font-size: 23px; white-space: normal;" text="This game is inspired by Rwandan oral traditions of Kigwa, the Ibimanuka and Gihanga. These stories differ from teller to teller. Rudh, his siblings and the darkness are our own inventions." />
+        <ui:VisualElement class="hair" style="margin-top: 30px; margin-bottom: 30px;" />
+        <ui:Label class="body f-light" style="font-size: 15px;" text="Photosensitivity warning: some scenes contain flashing light. Best played with headphones." />
+        <ui:VisualElement class="prompts" style="margin-top: 34px; margin-left: -26px;">
+          <ui:VisualElement class="prompt"><ui:Label class="glyph round" text="A" /><ui:Label class="prompt-label" text="Continue" /></ui:VisualElement>
+        </ui:VisualElement>
+      </ui:VisualElement>
+    </ui:VisualElement>
+
+    <!-- 3 · Title -->
+    <ui:VisualElement name="scr-title" class="screen hidden bg bg-title">
+      <ui:VisualElement class="fill vignette" />
+      <ui:VisualElement class="fill" style="align-items: center; justify-content: center;">
+        <ui:Label text="LEGEND OF THE FIRST KING" class="eyebrow dim-text" style="letter-spacing: 8px; margin-bottom: 14px;" />
+        <ui:VisualElement class="logo" style="width: 980px; height: 130px;" />
+        <ui:VisualElement class="ornament" style="width: 420px; margin-top: 12px;" />
+        <ui:Label name="press-any" text="PRESS ANY BUTTON" class="parch" style="margin-top: 250px; font-size: 14px; letter-spacing: 7px;" />
+      </ui:VisualElement>
+    </ui:VisualElement>
+
+    <!-- 4 · Main menu -->
+    <ui:VisualElement name="scr-menu" class="screen hidden bg bg-menu">
+      <ui:VisualElement class="fill shade-right" />
+      <ui:VisualElement style="position: absolute; right: 120px; top: 100px; width: 450px;">
+        <ui:VisualElement class="logo" style="height: 64px;" />
+        <ui:VisualElement class="ornament" style="margin-top: 10px; margin-bottom: 44px;" />
+        <ui:VisualElement name="menu-list" />
+      </ui:VisualElement>
+      <ui:VisualElement class="prompts" style="position: absolute; right: 120px; bottom: 56px;">
+        <ui:VisualElement class="prompt"><ui:Label class="glyph round" text="B" /><ui:Label class="prompt-label" text="Back" /></ui:VisualElement>
+        <ui:VisualElement class="prompt"><ui:Label class="glyph round" text="A" /><ui:Label class="prompt-label" text="Select" /></ui:VisualElement>
+      </ui:VisualElement>
+    </ui:VisualElement>
+
+    <!-- 5 · Save select -->
+    <ui:VisualElement name="scr-saves" class="screen hidden bg bg-valley">
+      <ui:VisualElement class="fill dark" />
+      <ui:VisualElement style="position: absolute; left: 100px; top: 74px; right: 100px; bottom: 74px;">
+        <ui:Label name="saves-eyebrow" text="LOAD GAME" class="eyebrow" />
+        <ui:Label text="Choose a telling" class="f-display title" style="font-size: 52px; margin-top: 10px;" />
+        <ui:VisualElement class="hair" style="width: 220px; margin-top: 14px; margin-bottom: 40px;" />
+        <ui:VisualElement name="slot-list" style="flex-direction: row;" />
+      </ui:VisualElement>
+      <ui:VisualElement class="prompts" style="position: absolute; right: 100px; bottom: 56px;">
+        <ui:VisualElement class="prompt"><ui:Label class="glyph" text="DEL" /><ui:Label class="prompt-label" text="Delete" /></ui:VisualElement>
+        <ui:VisualElement class="prompt"><ui:Label class="glyph round" text="B" /><ui:Label class="prompt-label" text="Back" /></ui:VisualElement>
+        <ui:VisualElement class="prompt"><ui:Label class="glyph round" text="A" /><ui:Label class="prompt-label" text="Select" /></ui:VisualElement>
+      </ui:VisualElement>
+    </ui:VisualElement>
+
+    <!-- 6 · Credits / about -->
+    <ui:VisualElement name="scr-credits" class="screen hidden bg bg-arena">
+      <ui:VisualElement class="fill dark" />
+      <ui:VisualElement style="position: absolute; left: 160px; top: 120px; width: 760px;">
+        <ui:Label text="CREDITS" class="eyebrow" />
+        <ui:Label text="Umwami's Ascend" class="f-display title" style="font-size: 52px; margin-top: 10px;" />
+        <ui:VisualElement class="ornament" style="width: 260px; margin-top: 14px; margin-bottom: 30px;" />
+        <ui:Label class="body f-light" text="Design, code and art: [Your name]&#10;Nature models: Quaternius (CC0) · Fonts: Marcellus, Lato (SIL OFL)&#10;&#10;Inspired by Rwandan oral traditions of Kigwa, the Ibimanuka and Gihanga Ngomijana. These stories were passed down by voice and differ from teller to teller. Rudh, his siblings and the Umwijima are our own inventions. Seek out the real tellings at the Rwanda Cultural Heritage Academy and from the elders who keep them." />
+      </ui:VisualElement>
+      <ui:VisualElement class="prompts" style="position: absolute; right: 100px; bottom: 56px;">
+        <ui:VisualElement class="prompt"><ui:Label class="glyph round" text="B" /><ui:Label class="prompt-label" text="Back" /></ui:VisualElement>
+      </ui:VisualElement>
+    </ui:VisualElement>
+
+    <!-- 7 · Loading -->
+    <ui:VisualElement name="scr-loading" class="screen hidden bg bg-valley">
+      <ui:VisualElement class="fill shade-bottom" />
+      <ui:VisualElement style="position: absolute; left: 100px; bottom: 96px; width: 760px;">
+        <ui:Label name="load-eyebrow" text="MUBARI · ON THE AKAGERA" class="eyebrow" />
+        <ui:Label name="load-title" text="The Papyrus Marsh" class="f-display title" style="font-size: 66px; margin-top: 10px;" />
+        <ui:VisualElement class="ornament" style="width: 240px; margin-top: 14px; margin-bottom: 22px;" />
+        <ui:Label name="load-lore" class="f-serif dim-text" style="font-size: 20px; white-space: normal;" text="&quot;Ibimanuka&quot;, those who fell from the heavens. In many tellings, the people who saw them come down by the Akagera gave them this name." />
+      </ui:VisualElement>
+      <ui:VisualElement style="position: absolute; right: 100px; bottom: 96px; width: 400px; align-items: flex-end;">
+        <ui:Label text="TIP" class="eyebrow" style="font-size: 11px;" />
+        <ui:Label class="body f-light" style="-unity-text-align: upper-right; margin-top: 8px;" text="A spark alone dies. A fire grows. Relight hearths to grow your ember." />
+        <ui:VisualElement style="flex-direction: row; align-items: center; margin-top: 22px;">
+          <ui:Label text="LOADING" class="eyebrow dim-text" style="margin-right: 14px;" />
+          <ui:VisualElement name="spinner" class="spin" />
+        </ui:VisualElement>
+      </ui:VisualElement>
+    </ui:VisualElement>
+
+    <ui:VisualElement name="toast" class="toast" picking-mode="Ignore" />
+    <ui:VisualElement class="fill grain" picking-mode="Ignore" />
+  </ui:VisualElement>
+</ui:UXML>
